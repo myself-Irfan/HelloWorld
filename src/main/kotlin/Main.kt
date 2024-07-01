@@ -21,20 +21,19 @@ fun prePost(num: Int): Int {
 }
 
 
-fun operators(num1: Int, num2: Int){
+fun operators(num1: Int, num2: Int) {
     /*
     practicing operators
      */
     println("Initiating function: ${::operators.name}")
 
     var x = num1
-    var y =num2
+    var y = num2
 
-    if (x<y) {
+    if (x < y) {
         println("Need swapping")
-        x = y.also{y=x}
-    }
-    else {
+        x = y.also { y = x }
+    } else {
         println("As is")
     }
 
@@ -159,22 +158,33 @@ fun main() {
 
     val isActive: Boolean = true
     var ranNum: Int = genRandInt()
+    val randInt1: Int = genRandInt()
+    val randInt2: Int = genRandInt()
     println("Generated Int: $ranNum")
 
     if (isActive) {
         if (ranNum >= 10) {
-            operators(genRandInt(), genRandInt())
-        }
-        else if (ranNum > 0) {
+            operators(randInt1, randInt2)
+        } else if (ranNum > 0) {
             val resPrePost = prePost(ranNum)
             println("pre_Post result: $resPrePost")
-        }
-        else {
+        } else {
             println("$ranNum can not be less than 0")
         }
-    }
-    else {
+    } else {
         printDataType()
     }
+
+    /*
+     type definition since all return same data type else can not define type
+     since only one instruction per block no curly braces but for more needs curly braces
+     */
+
+    val condText: String =
+        if ((randInt1 % 2) == 0 && (randInt2 % 2 == 0)) "Generated $randInt1 $ $randInt2 are both Even"
+        else if ((randInt1 % 2) == 0 || (randInt2 % 2) == 0) "Generated $randInt1 or $randInt2 is Odd"
+        else "Generated $randInt1 and $randInt2 are both odd"
+
+    println("Conditional Text: $condText")
 
 }
