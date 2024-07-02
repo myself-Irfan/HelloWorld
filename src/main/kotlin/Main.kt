@@ -146,6 +146,38 @@ fun genRandInt(): Int {
     return Random.nextInt(1, 21)
 }
 
+
+fun ctrlFlow() {
+    val randInt = genRandInt()
+
+    val text: String = when {
+        randInt == 5 || randInt == 10 -> "5 or 10"
+        randInt == 15 || randInt == 20 -> "15 or 20"
+        randInt in 6..9 -> "Between 6 and 9"
+        else -> "Not blessed numbers"
+    }
+}
+
+fun ctrlFlow2() {
+    /*
+    demonstrates when expression
+     */
+    println("Enter a num: ")
+    var usrIn = readln()
+
+    when {
+        usrIn.isEmpty() -> println("Input is empty")
+        usrIn.toIntOrNull() != null -> {
+            println("$usrIn is int")
+            if (usrIn.toInt() % 2 == 0) println("$usrIn is Even")
+            else println("Int is Odd")
+        }
+        usrIn.toDoubleOrNull() != null -> println("$usrIn is double")
+        else -> println("$usrIn is string")
+    }
+}
+
+
 fun main() {
 //    explicit declaration is not mandatory since Kotlin has type inference
 //    var curRealm: String = "NetherRealm"
@@ -156,35 +188,37 @@ fun main() {
 //    charBool()
 //
 
-    val isActive: Boolean = true
-    var ranNum: Int = genRandInt()
-    val randInt1: Int = genRandInt()
-    val randInt2: Int = genRandInt()
-    println("Generated Int: $ranNum")
+//    val isActive: Boolean = true
+//    var ranNum: Int = genRandInt()
+//    val randInt1: Int = genRandInt()
+//    val randInt2: Int = genRandInt()
+//    println("Generated Int: $ranNum")
+//
+//    if (isActive) {
+//        if (ranNum >= 10) {
+//            operators(randInt1, randInt2)
+//        } else if (ranNum > 0) {
+//            val resPrePost = prePost(ranNum)
+//            println("pre_Post result: $resPrePost")
+//        } else {
+//            println("$ranNum can not be less than 0")
+//        }
+//    } else {
+//        printDataType()
+//    }
+//
+//    /*
+//     type definition since all return same data type else can not define type
+//     since only one instruction per block no curly braces but for more needs curly braces
+//     */
+//
+//    val condText: String =
+//        if ((randInt1 % 2) == 0 && (randInt2 % 2 == 0)) "Generated $randInt1 $ $randInt2 are both Even"
+//        else if ((randInt1 % 2) == 0 || (randInt2 % 2) == 0) "Generated $randInt1 or $randInt2 is Odd"
+//        else "Generated $randInt1 and $randInt2 are both odd"
+//
+//    println("Conditional Text: $condText")
 
-    if (isActive) {
-        if (ranNum >= 10) {
-            operators(randInt1, randInt2)
-        } else if (ranNum > 0) {
-            val resPrePost = prePost(ranNum)
-            println("pre_Post result: $resPrePost")
-        } else {
-            println("$ranNum can not be less than 0")
-        }
-    } else {
-        printDataType()
-    }
-
-    /*
-     type definition since all return same data type else can not define type
-     since only one instruction per block no curly braces but for more needs curly braces
-     */
-
-    val condText: String =
-        if ((randInt1 % 2) == 0 && (randInt2 % 2 == 0)) "Generated $randInt1 $ $randInt2 are both Even"
-        else if ((randInt1 % 2) == 0 || (randInt2 % 2) == 0) "Generated $randInt1 or $randInt2 is Odd"
-        else "Generated $randInt1 and $randInt2 are both odd"
-
-    println("Conditional Text: $condText")
+    ctrlFlow2()
 
 }
