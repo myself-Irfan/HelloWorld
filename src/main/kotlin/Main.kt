@@ -1,6 +1,69 @@
 import kotlin.random.Random
 
 
+fun main() {
+//    explicit declaration is not mandatory since Kotlin has type inference
+//    var curRealm: String = "NetherRealm"
+//    val age: Int = 22
+//
+//    println("Hello from $curRealm, Mortal.\nYou died at $age")
+//    checkInference()
+//    charBool()
+//
+
+//    val isActive: Boolean = true
+//    var ranNum: Int = genRandInt()
+
+//    println("Generated Int: $ranNum")
+//
+//    if (isActive) {
+//        if (ranNum >= 10) {
+//            operators(ranNum)
+//        } else if (ranNum > 0) {
+//            val resPrePost = prePost(ranNum)
+//            println("pre_Post result: $resPrePost")
+//        } else {
+//            println("$ranNum can not be less than 0")
+//        }
+//    } else {
+//        printDataType()
+//    }
+//
+//    /*
+//     type definition since all return same data type else can not define type
+//     since only one instruction per block no curly braces but for more needs curly braces
+//     */
+//
+//    val condText: String =
+//        if ((randInt1 % 2) == 0 && (randInt2 % 2 == 0)) "Generated $randInt1 $ $randInt2 are both Even"
+//        else if ((randInt1 % 2) == 0 || (randInt2 % 2) == 0) "Generated $randInt1 or $randInt2 is Odd"
+//        else "Generated $randInt1 and $randInt2 are both odd"
+//
+//    println("Conditional Text: $condText")
+
+//    val txt: String = ctrlFlow()
+//    println("ctrlFlow() result: $txt")
+//    ctrlFlow2()
+
+//    nullStr()
+    println("getMax result: ${getMax()}")
+    println("getMax result ${getMax(2.5, 3.75)}")
+    println("getMax result: ${getMax(3,3,2)}")
+
+    println("defVal: ${defVal("iA")}")
+}
+
+
+//fun sumVarArg(vararg numbs: Int): Int {
+//    return
+//}
+
+
+fun defVal(name: String = "User", age: Int ?= genRandInt()): String {
+    return "Hello $name. Congrats on being $age"
+}
+
+
 fun prePost(num: Int): Int {
     /*
     demonstrates how pre increment and post increment works
@@ -21,14 +84,14 @@ fun prePost(num: Int): Int {
 }
 
 
-fun operators(num1: Int, num2: Int) {
+fun operators(num1: Int, num2: Int? = null) {
     /*
     practicing operators
      */
     println("Initiating function: ${::operators.name}")
 
     var x = num1
-    var y = num2
+    var y = num2 ?: genRandInt()
 
     if (x < y) {
         println("Need swapping")
@@ -91,54 +154,6 @@ fun printDataType() {
 }
 
 
-fun returnByte(): Pair<Byte, Byte> {
-    /*
-    return a pair of minimum and maximum of Byte data type
-     */
-
-    val minByte: Byte = Byte.MIN_VALUE
-    val maxByte: Byte = Byte.MAX_VALUE
-
-    return Pair(minByte, maxByte)
-}
-
-
-fun returnNum(): Pair<Int, Int> {
-    /*
-    return a pair of minimum and maximum of Int data type
-     */
-
-    val minNum: Int = Int.MIN_VALUE
-    val maxNum: Int = Int.MAX_VALUE
-
-    return Pair(minNum, maxNum)
-}
-
-
-fun returnShort(): Pair<Short, Short> {
-    /*
-    return a pair of minimum and maximum of Short data Type
-     */
-
-    val minShort: Short = Short.MIN_VALUE
-    val maxShort: Short = Short.MAX_VALUE
-
-    return Pair(minShort, maxShort)
-}
-
-
-fun returnLong(): Pair<Long, Long> {
-    /*
-    return a pair of minimum and maximum of Long data type
-     */
-
-    val minLong: Long = Long.MIN_VALUE
-    val maxLong: Long = Long.MAX_VALUE
-
-    return Pair(minLong, maxLong)
-}
-
-
 fun genRandInt(): Int {
     /*
     generate random Int
@@ -147,7 +162,9 @@ fun genRandInt(): Int {
 }
 
 
-fun ctrlFlow() {
+fun ctrlFlow(): String {
+    println("Initiating: ${::ctrlFlow.name} ")
+
     val randInt = genRandInt()
 
     val text: String = when {
@@ -156,14 +173,19 @@ fun ctrlFlow() {
         randInt in 6..9 -> "Between 6 and 9"
         else -> "Not blessed numbers"
     }
+
+    return text
 }
+
 
 fun ctrlFlow2() {
     /*
     demonstrates when expression
      */
+    println("Initiating: ${::ctrlFlow2.name}")
+
     println("Enter a num: ")
-    var usrIn = readln()
+    var usrIn: String = readln()
 
     when {
         usrIn.isEmpty() -> println("Input is empty")
@@ -172,53 +194,22 @@ fun ctrlFlow2() {
             if (usrIn.toInt() % 2 == 0) println("$usrIn is Even")
             else println("Int is Odd")
         }
+
         usrIn.toDoubleOrNull() != null -> println("$usrIn is double")
         else -> println("$usrIn is string")
     }
 }
 
 
-fun main() {
-//    explicit declaration is not mandatory since Kotlin has type inference
-//    var curRealm: String = "NetherRealm"
-//    val age: Int = 22
-//
-//    println("Hello from $curRealm, Mortal.\nYou died at $age")
-//    checkInference()
-//    charBool()
-//
+fun nullStr() {
+    println("Initiating ${::nullStr.name}")
+    // by default, var is not nullable so making nullable with ?
+    var txt: String? = "iCode"
+    txt = null
+    // ? allows safe call to null var, returns null for null instead of pne
+    println("${txt?.length}")
+//    println(txt!!.length) // force a npe
 
-//    val isActive: Boolean = true
-//    var ranNum: Int = genRandInt()
-//    val randInt1: Int = genRandInt()
-//    val randInt2: Int = genRandInt()
-//    println("Generated Int: $ranNum")
-//
-//    if (isActive) {
-//        if (ranNum >= 10) {
-//            operators(randInt1, randInt2)
-//        } else if (ranNum > 0) {
-//            val resPrePost = prePost(ranNum)
-//            println("pre_Post result: $resPrePost")
-//        } else {
-//            println("$ranNum can not be less than 0")
-//        }
-//    } else {
-//        printDataType()
-//    }
-//
-//    /*
-//     type definition since all return same data type else can not define type
-//     since only one instruction per block no curly braces but for more needs curly braces
-//     */
-//
-//    val condText: String =
-//        if ((randInt1 % 2) == 0 && (randInt2 % 2 == 0)) "Generated $randInt1 $ $randInt2 are both Even"
-//        else if ((randInt1 % 2) == 0 || (randInt2 % 2) == 0) "Generated $randInt1 or $randInt2 is Odd"
-//        else "Generated $randInt1 and $randInt2 are both odd"
-//
-//    println("Conditional Text: $condText")
-
-    ctrlFlow2()
-
+    // elvis op -> if txt not null assign txt else assign "Some text"
+    val txt2: String = txt ?: "Default since var null"
 }
