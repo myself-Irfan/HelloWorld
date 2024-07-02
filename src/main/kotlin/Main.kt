@@ -46,17 +46,23 @@ fun main() {
 //    ctrlFlow2()
 
 //    nullStr()
-    println("getMax result: ${getMax()}")
-    println("getMax result ${getMax(2.5, 3.75)}")
-    println("getMax result: ${getMax(3,3,2)}")
+//    println("getMax result: ${getMax()}")
+//    println("getMax result ${getMax(2.5, 3.75)}")
+//    println("getMax result: ${getMax(3,3,2)}")
+//
+//    println("defVal: ${defVal("iA")}")
 
-    println("defVal: ${defVal("iA")}")
+//    var resVarArg: Int = sumVarArg(1, 2, 9)
+//    println("resVarArg: $resVarArg")
+//
+//    var resVarArg2: Int = sumVarArg2(8, 6, 3, 9)
+//    println("resVargArg2: $resVarArg2")
+
+//    loopStrChar("We are Venom")
+//    forLoop()
+    println("whileLoop returns: ${whileLoop()}")
+    doWhile()
 }
-
-
-//fun sumVarArg(vararg numbs: Int): Int {
-//    return
-//}
 
 
 fun defVal(name: String = "User", age: Int ?= genRandInt()): String {
