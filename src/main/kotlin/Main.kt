@@ -60,8 +60,11 @@ fun main() {
 
 //    loopStrChar("We are Venom")
 //    forLoop()
-    println("whileLoop returns: ${whileLoop()}")
-    doWhile()
+//    println("whileLoop returns: ${whileLoop()}")
+//    doWhile()
+
+    lContinue()
+    breakLoop()
 }
 
 

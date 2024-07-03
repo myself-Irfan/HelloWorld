@@ -66,3 +66,54 @@ fun doWhile(){
         println(num)
     } while (num < 10)
 }
+
+
+fun lContinue() {
+    /*
+    demonstrates continue in a loop
+     */
+
+    for (i in 1..10) {
+        if (i%2 == 0) continue  // continue skips the iteration
+        else if (i == 7) break // breaks out of the loop
+        else println("lCont: $i")
+    }
+}
+
+
+fun breakLoop() {
+    /*
+    this demonstrates how break works, break -> init loop
+     */
+    var num1 = 0
+    var num2 = 0
+
+    while (num1 < 5) {
+        num1++
+        println("$num1")
+
+        var i = 0
+
+        while (i < 5) {
+            if (i == 3) break
+            i++
+            println("#$i")
+        }
+    }
+
+    /*
+    this demonstrates how break with label works ->
+     */
+    init@ while (num2 < 5) {
+        num2++
+        println("$num2")
+
+        var i = 0
+
+        while (i < 5) {
+            if (i == 3) break@init
+            i++
+            println("*$i")
+        }
+    }
+}
