@@ -66,7 +66,8 @@ fun main() {
 //    lContinue()
 //    breakLoop()
 //    challenge1Main()
-    arrayMain()
+//    arrayMain()
+    challenge2Main()
 }
 
 
@@ -165,8 +166,8 @@ fun printDataType() {
 }
 
 
-// gen a random num of 1 to lastNum if null then 21
-fun genRandInt(lastNum: Int?= null): Int = if (lastNum != null) Random.nextInt(1, lastNum+1) else Random.nextInt(1, 21)
+// gen a random num of 1 to lastNum if null then 20 (21 exclusive)
+fun genRandInt(fstNum: Int = 1, lastNum: Int = 21): Int = if (fstNum > lastNum) Random.nextInt(lastNum, fstNum) else Random.nextInt(fstNum, lastNum)
 
 
 fun ctrlFlow(): String {
