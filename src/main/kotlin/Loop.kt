@@ -102,7 +102,8 @@ fun breakLoop() {
     }
 
     /*
-    this demonstrates how break with label works ->
+    this demonstrates how break with label works
+    outer loop cannot target inner loop
      */
     init@ while (num2 < 5) {
         num2++

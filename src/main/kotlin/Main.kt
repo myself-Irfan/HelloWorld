@@ -63,8 +63,9 @@ fun main() {
 //    println("whileLoop returns: ${whileLoop()}")
 //    doWhile()
 
-    lContinue()
-    breakLoop()
+//    lContinue()
+//    breakLoop()
+    challengeMain()
 }
 
 
@@ -163,12 +164,8 @@ fun printDataType() {
 }
 
 
-fun genRandInt(): Int {
-    /*
-    generate random Int
-     */
-    return Random.nextInt(1, 21)
-}
+// gen a random num of 1 to lastNum if null then 21
+fun genRandInt(lastNum: Int?= null): Int = if (lastNum != null) Random.nextInt(1, lastNum+1) else Random.nextInt(1, 21)
 
 
 fun ctrlFlow(): String {
