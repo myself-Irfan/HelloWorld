@@ -65,7 +65,8 @@ fun main() {
 
 //    lContinue()
 //    breakLoop()
-    challengeMain()
+//    challenge1Main()
+    arrayMain()
 }
 
 

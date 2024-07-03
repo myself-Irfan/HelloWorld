@@ -1,4 +1,4 @@
-fun challengeMain () {
+fun challenge1Main () {
     /*
     main for challenge1
      */
