@@ -67,7 +67,14 @@ fun main() {
 //    breakLoop()
 //    challenge1Main()
 //    arrayMain()
-    challenge2Main()
+//    challenge2Main()
+
+//    oopMain()
+    val u1 = Usr2Cons("iRFaN", "Ahmed", 27)
+    u1.introduceSelf()
+
+    val u2 = Usr2Cons(" Ashek ")
+    u2.introduceSelf()
 }
 
 
