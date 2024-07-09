@@ -3,18 +3,25 @@ This package demonstrates loops and varargs
 vararg allows no fixed limit of same data type
  */
 
-fun sumVarArg(vararg nums: Int): Int {
-    var res = 0
-    for (num in nums) {
-        res += num
-    }
+fun loopMain() {
+    var resVarArg: Int = sumVarArg(1, 2, 9)
+    println("resVarArg: $resVarArg")
 
-    return res
+    loopStrChar("We are Venom")
+    forLoop()
+    println("whileLoop returns: ${whileLoop()}")
+    doWhile()
+
+    lContinue()
+    breakLoop()
 }
 
 
-fun sumVarArg2(vararg nums: Int): Int {
+fun sumVarArg(vararg nums: Int): Int {
     var res = 0
+//    for (num in nums) {
+//        res += num
+//    }
 
     nums.forEach { res += it }
 

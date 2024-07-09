@@ -2,7 +2,17 @@
 This package demonstrates method overloading
  */
 
+fun methodOload() {
+    println("getMax result: ${getMax()}")
+    println("getMax result ${getMax(2.5, 3.75)}")
+    println("getMax result: ${getMax(3,3,2)}")
+}
+
 fun getMax(num1: Int? = null, num2: Int? = null): Int {
+    /*
+    If null then generate a random Int
+     */
+
     val n1 = num1 ?: genRandInt()
     val n2 = num2 ?: genRandInt()
 

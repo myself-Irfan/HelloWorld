@@ -62,6 +62,12 @@ class Usr(fName: String, lName: String, age: Int) {
 
 
 class Usr2Cons(var fName: String, var lName: String, var age: Int) {
+    /*
+    Demonstrate usage of secondary constructor
+     */
+    companion object {
+        val className = Usr2Cons::class.simpleName
+    }
 
     init {
         fName = fName.trim().lowercase().replaceFirstChar { it.uppercase() }
@@ -70,14 +76,25 @@ class Usr2Cons(var fName: String, var lName: String, var age: Int) {
     }
 
     constructor(fName: String): this(fName, "doe", 18) {
-        println("Only fName received")
+        println("Secondary constructor -> Only fName received")
     }
 
     constructor(fName: String, lName: String): this(fName, lName, 18) {
-        println("Only fName & lName received")
+        println("Secondary constructor -> Only fName & lName received")
     }
 
     fun introduceSelf () {
-        println("$fName $lName is $age years old")
+        println("$className ${::introduceSelf.name} says $fName $lName is $age years old")
+    }
+}
+
+
+class DefaultVal(var fName: String = "John", var lName: String = "Doe", var age: Int = 18) {
+    companion object {
+        val className = DefaultVal::class.simpleName
+    }
+
+    fun introduceSelf () {
+        println("${className} ${::introduceSelf.name} says $fName $lName is $age years old")
     }
 }

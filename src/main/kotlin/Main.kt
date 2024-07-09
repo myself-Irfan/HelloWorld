@@ -46,35 +46,17 @@ fun main() {
 //    ctrlFlow2()
 
 //    nullStr()
-//    println("getMax result: ${getMax()}")
-//    println("getMax result ${getMax(2.5, 3.75)}")
-//    println("getMax result: ${getMax(3,3,2)}")
-//
+
 //    println("defVal: ${defVal("iA")}")
 
-//    var resVarArg: Int = sumVarArg(1, 2, 9)
-//    println("resVarArg: $resVarArg")
-//
-//    var resVarArg2: Int = sumVarArg2(8, 6, 3, 9)
-//    println("resVargArg2: $resVarArg2")
+//    loopMain()
 
-//    loopStrChar("We are Venom")
-//    forLoop()
-//    println("whileLoop returns: ${whileLoop()}")
-//    doWhile()
-
-//    lContinue()
-//    breakLoop()
 //    challenge1Main()
 //    arrayMain()
 //    challenge2Main()
 
-//    oopMain()
-    val u1 = Usr2Cons("iRFaN", "Ahmed", 27)
-    u1.introduceSelf()
+    oopMain()
 
-    val u2 = Usr2Cons(" Ashek ")
-    u2.introduceSelf()
 }
 
 

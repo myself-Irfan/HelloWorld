@@ -1,5 +1,5 @@
 fun arrayMain() {
-//    mixArr()
+    mixArr()
 }
 
 
